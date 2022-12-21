@@ -1,5 +1,8 @@
-﻿namespace Dominio;
-public class Class1
-{
+﻿using System;
 
+namespace Dominio
+{
+    public class Class1
+    {
+    }
 }

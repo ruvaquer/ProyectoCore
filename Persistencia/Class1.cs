@@ -1,5 +1,8 @@
-﻿namespace Persistencia;
-public class Class1
-{
+﻿using System;
 
+namespace Persistencia
+{
+    public class Class1
+    {
+    }
 }
