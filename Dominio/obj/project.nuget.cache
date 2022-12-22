@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fDEDmQLt/QuzXwCq9Bk1ymNxM0COWazO5uHAG4quL1KKyWvTMmOvTFPPfMlW0KtPKN+toLMXrHD/EdLVnDB56g==",
+  "dgSpecHash": "jFmic1BtSEpAlkwFGIGIZJU/OGPh3wc1vhEUlvQcQk8FPQ/pmwiRXgX4LSRHX8N109F3J9s1z9FCKit3RmecNQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Dominio\\Dominio.csproj",
+  "projectFilePath": "c:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Dominio\\Dominio.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
