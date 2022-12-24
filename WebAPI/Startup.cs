@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Persistencia;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebAPI
 {
@@ -26,7 +28,11 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            //Aquí agrego el nombre del contexto con el que estoy trabajando la persistencia, también indicamos el tipo de conexión
+            services.AddDbContext<CursosOnlineContext>(opt => {
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));//También indico que el proyecto se inyecte con el valor de CursosOnlineContext
+            });
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
