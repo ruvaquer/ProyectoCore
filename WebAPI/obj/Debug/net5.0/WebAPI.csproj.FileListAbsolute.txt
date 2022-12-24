@@ -69,3 +69,7 @@ C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debu
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\MediatR.dll
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\MediatR.Contracts.dll
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll

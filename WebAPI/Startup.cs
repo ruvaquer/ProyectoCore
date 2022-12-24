@@ -13,6 +13,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Persistencia;
 using Microsoft.EntityFrameworkCore;
+using MediatR;
+using Aplicacion.Cursos;
 
 namespace WebAPI
 {
@@ -32,7 +34,11 @@ namespace WebAPI
             services.AddDbContext<CursosOnlineContext>(opt => {
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            //Agregamos la configuración de IMedator de Consulta Cursos
+            services.AddMediatR(typeof(Consulta.Handler).Assembly);
             
+            //Agregado por defecto
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
