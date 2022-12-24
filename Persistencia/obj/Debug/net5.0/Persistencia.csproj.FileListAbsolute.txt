@@ -13,3 +13,6 @@ C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\Persistencia\ob
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\Persistencia\obj\Debug\net5.0\refint\Persistencia.dll
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\Persistencia\obj\Debug\net5.0\Persistencia.pdb
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\Persistencia\obj\Debug\net5.0\ref\Persistencia.dll
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\Persistencia\bin\Debug\net5.0\Persistencia.runtimeconfig.json
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\Persistencia\bin\Debug\net5.0\Persistencia.runtimeconfig.dev.json
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\Persistencia\obj\Debug\net5.0\Persistencia.genruntimeconfig.cache

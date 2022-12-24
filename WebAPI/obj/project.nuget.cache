@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c7tgmT4PhxrWjY5rTWuy8tqwLfgkCv96DVV08EfLwgCdDQyBQE+4bmmVzoOMpN98FhEZMaP9pjV5RjbZM9gDRQ==",
+  "dgSpecHash": "qpcll5dz095U54mt3N/RJvQUYtQ8bWVbyGzYKr1RVrOvjzfd/wvV0Qu/VAqKdy+hDXqbybp3mnB9KSvYgNaFGA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rubva\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\rubva\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MboosKUpL1ZIA+YC5UoIC0AyXK4RK8Ecj//4PAvP3Zh3fEuPNI2MQE2x31eIUjOuVAjW+ZXqh3BCWTnhzFo46A==",
+  "dgSpecHash": "+edUbSOkoKvxvMi7QU+JIFLYUMPpAubc6N0ISp/JvV71Tq/vFxxKgNDziEUAi7/GsqQDeACV4XU+CIemIJoHbA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Aplicacion\\Aplicacion.csproj",
+  "projectFilePath": "C:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Aplicacion\\Aplicacion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rubva\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\rubva\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

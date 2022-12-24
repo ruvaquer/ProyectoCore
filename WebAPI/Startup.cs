@@ -30,7 +30,7 @@ namespace WebAPI
         {
             //Aquí agrego el nombre del contexto con el que estoy trabajando la persistencia, también indicamos el tipo de conexión
             services.AddDbContext<CursosOnlineContext>(opt => {
-                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));//También indico que el proyecto se inyecte con el valor de CursosOnlineContext
+                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
             
             services.AddControllers();
