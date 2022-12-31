@@ -44,6 +44,12 @@ namespace WebAPI.Controllers
             return await _mediator.Send(datos);
         }
 
+        //Retorna un flat(Bandera), indicando como ha ido la transacción
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Unit>> Eliminar(int id){
+            return await _mediator.Send(new Eliminar.Ejecuta{Id = id});
+        }
+
 
     }
 }
