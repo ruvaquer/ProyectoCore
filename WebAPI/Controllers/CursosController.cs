@@ -30,5 +30,13 @@ namespace WebAPI.Controllers
         public async Task<ActionResult<Curso>> Detalles(int id){
             return await _mediator.Send(new ConsultaId.CursoUnico{Id = id});
         }
+
+        //Retorna un flat(Bandera), indicando como ha ido la transacción
+        [HttpPost]
+        public async Task<ActionResult<Unit>> Crear(Nuevo.Ejecuta datos){
+            return await _mediator.Send(datos);
+        }
+
+
     }
 }
