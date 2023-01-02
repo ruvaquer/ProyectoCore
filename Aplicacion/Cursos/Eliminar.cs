@@ -27,7 +27,7 @@ namespace Aplicacion.Cursos
             {
                 var curso = await _context.Curso.FindAsync(request.Id);
                 if(curso == null){
-                    throw new Exception("No se puede eeliminar el curso");
+                    throw new Exception("No se puede eliminar el curso");
                 }
 
                 _context.Remove(curso);
