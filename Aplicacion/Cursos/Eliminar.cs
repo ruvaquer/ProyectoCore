@@ -1,6 +1,8 @@
 using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using Aplicacion.HandLerError;
 using MediatR;
 using Persistencia;
 
@@ -27,9 +29,12 @@ namespace Aplicacion.Cursos
             {
                 var curso = await _context.Curso.FindAsync(request.Id);
                 if(curso == null){
-                    throw new Exception("No se puede eliminar el curso");
+                    //Reemplazo la excepción general por la que nosotros hemos construido
+                    //throw new Exception("No se puede eliminar el curso");
+                    //Tipo de error (como no encuentra el curso) es NotFound y 
+                    //Nos pide el objeto le mandamos un mensaje en la propiedad curso podemos poner al nombre xxx en vez de curso por ejemplo
+                    throw new HandLerExcepcion(HttpStatusCode.NotFound, new {curso = "No encontro el curso. "});
                 }
-
                 _context.Remove(curso);
 
                 //Commit
