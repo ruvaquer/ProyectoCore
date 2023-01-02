@@ -2,6 +2,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Dominio;
+using FluentValidation;
 using MediatR;
 using Persistencia;
 
@@ -16,6 +17,16 @@ namespace Aplicacion.Cursos
 
             //Le pongo que permita null ya que por defecto los dateTime no permiten null
             public DateTime? FechaPublicacion {get; set;}
+        }
+
+        //Creo una nueva clase que me controle la validación que estara entre la clase Ejecuta y el Handler
+        public class EjecutaValidacion : AbstractValidator<Ejecuta>{
+            //Dentro del constructor agrego las reglas de validación
+            public EjecutaValidacion(){
+                RuleFor(x => x.Titulo).NotEmpty();
+                RuleFor(x => x.Descripcion).NotEmpty();
+                RuleFor(x => x.FechaPublicacion).NotEmpty();
+            }
         }
 
         public class Handler : IRequestHandler<Ejecuta>
