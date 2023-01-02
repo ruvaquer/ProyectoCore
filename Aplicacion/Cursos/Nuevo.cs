@@ -44,7 +44,7 @@ namespace Aplicacion.Cursos
                 var curso = new Curso{
                     Titulo = request.Titulo,
                     Descripcion = request.Descripcion,
-                    FechaPublicacion = request.FechaPublicacion
+                    FechaPublicacion = request.FechaPublicacion //Si ponemos que puede ser nulo debemos indicar que permite nulos en la clase Curso para que permita null igual que se lo indicamos en el request
                 };
 
                 _context.Curso.Add(curso);
