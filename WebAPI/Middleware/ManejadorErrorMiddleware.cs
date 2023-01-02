@@ -22,7 +22,7 @@ namespace WebAPI.Middleware
         }
 
         //Este método nos ayudará a pasar el evento del controlador a al evento aplicación
-        public async Task Invocar(HttpContext context){
+        public async Task Invoke(HttpContext context){
             try{
                 await _next(context);
             }catch(Exception ex){
