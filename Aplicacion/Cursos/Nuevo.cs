@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Threading;
 using System.Threading.Tasks;
 using Dominio;
@@ -9,8 +10,9 @@ namespace Aplicacion.Cursos
 {
     public class Nuevo
     {
+        //Mapeamos los datos que llegan al controler
         public class Ejecuta : IRequest{
-
+            [Required(ErrorMessage ="Por favor Ingrese el Titulo del curso")]
             public string Titulo {get; set;}
             public string Descripcion {get; set;}
             public DateTime FechaPublicacion {get; set;}
