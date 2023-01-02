@@ -42,7 +42,8 @@ namespace WebAPI
             
             //Realizamos una modiifcación despues de instalar la librería de FluentValidation modificando el AddControllers agregando un nuevo método llamandolo:
             //1º - AddFluentValidation(), si da error debemos importarlo desde la librería que instalamos de FluentValidation en el proyecto Aplicacion, debemos agregar obsoleto para quitar el warning
-            services.AddControllers().AddFluentValidation();
+            //     - Configuración adicional indicandole que archivo debe validar, en este caso le indico que quiero validar la clase Nuevo de curso
+            services.AddControllers().AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<Nuevo>());
 
             //Agregado por defecto
             services.AddSwaggerGen(c =>
