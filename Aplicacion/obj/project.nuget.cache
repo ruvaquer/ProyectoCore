@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xBRk7CEf/OrSPN0Fd01YgudIe68+MmIQeKwc8B/I61P//cwX1mZtnTe/z2lUssGiRcCQcoqje1ybEXVy47xk6g==",
+  "dgSpecHash": "Z37j9t2g073HaH5/DmHfI6E/iVS0DN947Gk5tdR37DOhIOg5LGx1bnJebjN076zZMeK5SZaHhOMj4hbOTf3dAw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Aplicacion\\Aplicacion.csproj",
+  "projectFilePath": "C:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Aplicacion\\Aplicacion.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rubva\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
     "C:\\Users\\rubva\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
