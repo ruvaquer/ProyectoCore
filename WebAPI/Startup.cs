@@ -15,6 +15,7 @@ using Persistencia;
 using Microsoft.EntityFrameworkCore;
 using MediatR;
 using Aplicacion.Cursos;
+using FluentValidation.AspNetCore;
 
 namespace WebAPI
 {
@@ -28,6 +29,7 @@ namespace WebAPI
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        [Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
             //Aquí agrego el nombre del contexto con el que estoy trabajando la persistencia, también indicamos el tipo de conexión
@@ -38,8 +40,11 @@ namespace WebAPI
             //Agregamos la configuración de IMedator de Consulta Cursos
             services.AddMediatR(typeof(Consulta.Handler).Assembly);
             
+            //Realizamos una modiifcación despues de instalar la librería de FluentValidation modificando el AddControllers agregando un nuevo método llamandolo:
+            //1º - AddFluentValidation(), si da error debemos importarlo desde la librería que instalamos de FluentValidation en el proyecto Aplicacion, debemos agregar obsoleto para quitar el warning
+            services.AddControllers().AddFluentValidation();
+
             //Agregado por defecto
-            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
