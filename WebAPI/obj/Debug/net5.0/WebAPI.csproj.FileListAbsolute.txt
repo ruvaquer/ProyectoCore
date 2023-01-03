@@ -76,3 +76,8 @@ C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debu
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\FluentValidation.dll
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
