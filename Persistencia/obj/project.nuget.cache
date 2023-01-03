@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hofjxkQojifQ1x8f0qC6yMMajDgbfDDUhT7efYbU7i1IhMs0RvSU16XDTlNEM2NQMU/ganeNx2o6f4p0einBPg==",
+  "dgSpecHash": "Tq2MbdCbgZ6ikHybAMK3WgiYurC456Ww6yPzCqV0RMeaHrFZT656xgTWTqR1yVV/YWXKFmE5EvfiTEUktd3pnQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Persistencia\\Persistencia.csproj",
+  "projectFilePath": "C:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Persistencia\\Persistencia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rubva\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\rubva\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.17\\microsoft.aspnetcore.cryptography.internal.5.0.17.nupkg.sha512",

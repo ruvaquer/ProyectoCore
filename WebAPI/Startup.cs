@@ -17,6 +17,8 @@ using MediatR;
 using Aplicacion.Cursos;
 using FluentValidation.AspNetCore;
 using WebAPI.Middleware;
+using Dominio;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebAPI
 {
@@ -45,6 +47,16 @@ namespace WebAPI
             //1º - AddFluentValidation(), si da error debemos importarlo desde la librería que instalamos de FluentValidation en el proyecto Aplicacion, debemos agregar obsoleto para quitar el warning
             //     - Configuración adicional indicandole que archivo debe validar, en este caso le indico que quiero validar la clase Nuevo de curso
             services.AddControllers().AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<Nuevo>());
+
+            #region PARA EL CONTROL DE LA SEGURIDAD CON COREIDENTITY
+            //Agrego CoreIdentity
+            var builder = services.AddIdentityCore<Usuario>();
+            var identityBuilder = new IdentityBuilder(builder.UserType, builder.Services);
+            //Ahora agrego la instancia del entityFramework
+            identityBuilder.AddEntityFrameworkStores<CursosOnlineContext>();
+            //Manejador del acceso de los usuarios
+            identityBuilder.AddSignInManager<SignInManager<Usuario>>();
+            #endregion FIN COREIDENTITY
 
             //Agregado por defecto
             services.AddSwaggerGen(c =>
