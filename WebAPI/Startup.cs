@@ -19,6 +19,8 @@ using FluentValidation.AspNetCore;
 using WebAPI.Middleware;
 using Dominio;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.AspNetCore.Authentication;
 
 namespace WebAPI
 {
@@ -57,7 +59,7 @@ namespace WebAPI
             //Manejador del acceso de los usuarios
             identityBuilder.AddSignInManager<SignInManager<Usuario>>();
             #endregion FIN COREIDENTITY
-
+            services.TryAddSingleton<ISystemClock, SystemClock>();
             //Agregado por defecto
             services.AddSwaggerGen(c =>
             {
