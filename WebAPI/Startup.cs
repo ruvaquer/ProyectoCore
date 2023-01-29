@@ -66,6 +66,9 @@ namespace WebAPI
             //Inyectamos esta interface y esta clase lo hago ya que así podemos acceder a los métdos que me va generar en seguridad 
             services.AddScoped<IJwtGenerador, JwtGenerador>();
 
+            //Agregamos la lógica para que no permita consumir endpoints sin tener la seguridad del token
+            services.AddAuthentication(JwtBearerDefaults)
+
             //Agregado por defecto
             services.AddSwaggerGen(c =>
             {
