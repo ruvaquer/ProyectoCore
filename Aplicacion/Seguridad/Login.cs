@@ -13,14 +13,14 @@ namespace Aplicacion.Seguridad
     {
         public class Ejecuta : IRequest<Usuario>{
             public string Email{get; set;}
-            public string password{get; set;}
+            public string Password{get; set;}
         }
 
         //Reglas de validación de la clase Ejecuta donde están los parámetros del usuario que pediremos en el login
         public class EjecutaValidacion : AbstractValidator<Ejecuta>{
             public EjecutaValidacion(){
                 RuleFor(x=>x.Email).NotEmpty();
-                RuleFor(x=>x.password).NotEmpty();
+                RuleFor(x=>x.Password).NotEmpty();
             }
         }
 
@@ -43,8 +43,9 @@ namespace Aplicacion.Seguridad
                 }
 
                 //2º Ahora si pasamos esa validación podemos hacer el login
-                var resultado = await _signInManager.CheckPasswordSignInAsync(usuario, request.password, false);
+                var resultado = await _signInManager.CheckPasswordSignInAsync(usuario, request.Password, false);
                 if(resultado.Succeeded){
+                    //Esto lo cambiaremos no devolveremos el usuario devolveremos un token esto en pruebas
                     return usuario;
                 }
 
