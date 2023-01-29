@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.AspNetCore.Identity;
 using System.Net;
 using FluentValidation;
+using Aplicacion.Interfaces;
 
 namespace Aplicacion.Seguridad
 {
@@ -28,10 +29,12 @@ namespace Aplicacion.Seguridad
         {
             private readonly UserManager<Usuario> _userManager;
             private readonly SignInManager<Usuario> _signInManager;
+            private readonly IJwtGenerador _jwtGenerador;
             //Inyection
-            public Manejador(UserManager<Usuario> userManager, SignInManager<Usuario> signInManager){
+            public Manejador(UserManager<Usuario> userManager, SignInManager<Usuario> signInManager, IJwtGenerador jwtGenerador){
                 _userManager = userManager;
                 _signInManager = signInManager;
+                _jwtGenerador = jwtGenerador;
             }
 
             public async Task<UsuarioDatos> Handle(Ejecuta request, CancellationToken cancellationToken)
@@ -39,6 +42,7 @@ namespace Aplicacion.Seguridad
                 //Logica para el login
                 //1º Ver que el usuario exista
                 var usuario = await _userManager.FindByEmailAsync(request.Email);
+                
                 if(usuario == null){
                     throw new HandLerExcepcion(HttpStatusCode.Unauthorized);
                 }
@@ -51,7 +55,7 @@ namespace Aplicacion.Seguridad
                     //Retornamos UsuarioDatos
                     return new UsuarioDatos{
                         NombreCompleto = usuario.NombreCompleto,
-                        Token="Esta serán los datos del token",
+                        Token= _jwtGenerador.CrearToken(usuario),//Llamamos a nuestra interface que genera el string del token que pasaremos en el login
                         UserName = usuario.UserName,
                         Email = usuario.Email,
                         Imagen = null
