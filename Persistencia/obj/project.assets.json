@@ -1857,7 +1857,10 @@
         },
         "runtime": {
           "bin/placeholder/Dominio.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },

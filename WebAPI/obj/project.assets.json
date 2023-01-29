@@ -1939,7 +1939,10 @@
         },
         "runtime": {
           "bin/placeholder/Dominio.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Persistencia/1.0.0": {
         "type": "project",
@@ -1956,6 +1959,22 @@
         "runtime": {
           "bin/placeholder/Persistencia.dll": {}
         }
+      },
+      "Seguridad/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Aplicacion": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Seguridad.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Seguridad.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -6227,12 +6246,18 @@
       "type": "project",
       "path": "../Persistencia/Persistencia.csproj",
       "msbuildProject": "../Persistencia/Persistencia.csproj"
+    },
+    "Seguridad/1.0.0": {
+      "type": "project",
+      "path": "../Seguridad/Seguridad.csproj",
+      "msbuildProject": "../Seguridad/Seguridad.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Aplicacion >= 1.0.0",
       "Newtonsoft.Json >= 13.0.2",
+      "Seguridad >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -6276,6 +6301,9 @@
           "projectReferences": {
             "C:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Aplicacion\\Aplicacion.csproj": {
               "projectPath": "C:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Aplicacion\\Aplicacion.csproj"
+            },
+            "C:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Seguridad\\Seguridad.csproj": {
+              "projectPath": "C:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Seguridad\\Seguridad.csproj"
             }
           }
         }

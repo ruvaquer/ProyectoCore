@@ -1952,7 +1952,10 @@
         },
         "runtime": {
           "bin/placeholder/Dominio.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Persistencia/1.0.0": {
         "type": "project",

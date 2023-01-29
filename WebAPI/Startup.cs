@@ -21,6 +21,8 @@ using Dominio;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Authentication;
+using Aplicacion.Interfaces;
+using Seguridad.TokenSeguridad;
 
 namespace WebAPI
 {
@@ -60,6 +62,10 @@ namespace WebAPI
             identityBuilder.AddSignInManager<SignInManager<Usuario>>();
             #endregion FIN COREIDENTITY
             services.TryAddSingleton<ISystemClock, SystemClock>();
+
+            //Inyectamos esta interface y esta clase lo hago ya que así podemos acceder a los métdos que me va generar en seguridad 
+            services.AddScoped<IJwtGenerador, JwtGenerador>();
+
             //Agregado por defecto
             services.AddSwaggerGen(c =>
             {
