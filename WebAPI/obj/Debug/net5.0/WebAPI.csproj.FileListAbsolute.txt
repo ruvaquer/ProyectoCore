@@ -13,6 +13,7 @@ C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debu
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\MediatR.dll
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\MediatR.Contracts.dll
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

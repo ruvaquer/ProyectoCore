@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Dominio;
 using MediatR;
 using Aplicacion.Cursos;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebAPI.Controllers
 {
@@ -14,6 +15,7 @@ namespace WebAPI.Controllers
     {
         
         [HttpGet]
+        [Authorize]//Este método necesita autorizacion
         public async Task<ActionResult<List<Curso>>> Get(){
             return await Mediator.Send(new Consulta.ListaCursos());
         }

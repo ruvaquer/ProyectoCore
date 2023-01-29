@@ -23,6 +23,9 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Authentication;
 using Aplicacion.Interfaces;
 using Seguridad.TokenSeguridad;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace WebAPI
 {
@@ -67,7 +70,18 @@ namespace WebAPI
             services.AddScoped<IJwtGenerador, JwtGenerador>();
 
             //Agregamos la lógica para que no permita consumir endpoints sin tener la seguridad del token
-            services.AddAuthentication(JwtBearerDefaults)
+            var Key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Mi Palabra Secreta"));//Aqui ponemos la palabra clave que habiamos puesto dentro de Seguridad/TokenSeguridad/JwtGenerador.cs, Ya pondremos una más dificil
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt => {
+                
+                //Así le aplicamos las restircciones que van a trabajar con ls clientes que tengan este tipo de dns /url y verificar quien me envía el token
+                opt.TokenValidationParameters =  new TokenValidationParameters{
+                    ValidateIssuerSigningKey = true,//Cuando cualquier tipo de requiest debe ser validado por la lógica que hemos puesto dentgro del token
+                    IssuerSigningKey = Key,//Pasamos la palabra clave mi clave secreta, envuelto dentro de un objeto Key
+                    ValidateAudience = false, //Quien va poder crear esos tokens ahora lo pomnemos a false para que de momento lo pueda hacer cualquiera pero si solo se que van a ser unas determinadas compañias debemos conseguir su ip y configurarlo dentro de la aplicación
+                    ValidateIssuer = false //Esto es como el envío del token, lo pongo a false para que de momento no envie nada a las ips que he dado autorización como de momento no valido eso lo dejo a false
+                };
+
+            });
 
             //Agregado por defecto
             services.AddSwaggerGen(c =>
@@ -88,6 +102,9 @@ namespace WebAPI
             }
 
             //app.UseHttpsRedirection();
+
+            //Aqui debemos indicarle que mi app va usar la authenticacion que acabo de configurar
+            app.UseAuthentication();
 
             app.UseRouting();
 
