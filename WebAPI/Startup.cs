@@ -75,6 +75,7 @@ namespace WebAPI
 
             //Inyectamos esta interface y esta clase lo hago ya que así podemos acceder a los métdos que me va generar en seguridad 
             services.AddScoped<IJwtGenerador, JwtGenerador>();
+            services.AddScoped<IUsuarioSesion,UsuarioSesion>();
 
             //Agregamos la lógica para que no permita consumir endpoints sin tener la seguridad del token
             var Key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Mi Palabra Secreta"));//Aqui ponemos la palabra clave que habiamos puesto dentro de Seguridad/TokenSeguridad/JwtGenerador.cs, Ya pondremos una más dificil
@@ -89,6 +90,8 @@ namespace WebAPI
                 };
 
             });
+
+
 
             //Agregado por defecto
             services.AddSwaggerGen(c =>
