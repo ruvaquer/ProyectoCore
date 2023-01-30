@@ -26,6 +26,8 @@ using Seguridad.TokenSeguridad;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebAPI
 {
@@ -53,7 +55,12 @@ namespace WebAPI
             //Realizamos una modificación despues de instalar la librería de FluentValidation modificando el AddControllers agregando un nuevo método llamandolo:
             //1º - AddFluentValidation(), si da error debemos importarlo desde la librería que instalamos de FluentValidation en el proyecto Aplicacion, debemos agregar obsoleto para quitar el warning
             //     - Configuración adicional indicandole que archivo debe validar, en este caso le indico que quiero validar la clase Nuevo de curso
-            services.AddControllers().AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<Nuevo>());
+            services.AddControllers(opt => {
+                //Para que nuestros controles tenga la autorización antes de procesar el request de un cliente
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+                opt.Filters.Add(new AuthorizeFilter(policy));
+            })
+            .AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<Nuevo>());
 
             #region PARA EL CONTROL DE LA SEGURIDAD CON COREIDENTITY
             //Agrego CoreIdentity

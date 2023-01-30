@@ -15,7 +15,6 @@ namespace WebAPI.Controllers
     {
         
         [HttpGet]
-        [Authorize]//Este método necesita autorizacion
         public async Task<ActionResult<List<Curso>>> Get(){
             return await Mediator.Send(new Consulta.ListaCursos());
         }

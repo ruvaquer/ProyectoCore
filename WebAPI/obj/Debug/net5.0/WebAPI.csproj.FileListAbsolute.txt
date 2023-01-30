@@ -1,3 +1,10 @@
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.csproj.AssemblyReference.cache
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.AssemblyInfoInputs.cache
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.AssemblyInfo.cs
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\appsettings.json
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\WebAPI.exe
@@ -64,13 +71,6 @@ C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debu
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\Seguridad.pdb
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\Dominio.pdb
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\bin\Debug\net5.0\Persistencia.pdb
-C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.csproj.AssemblyReference.cache
-C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.AssemblyInfoInputs.cache
-C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.AssemblyInfo.cs
-C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.csproj.CoreCompileInputs.cache
-C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\scopedcss\bundle\WebAPI.styles.css
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\staticwebassets\WebAPI.StaticWebAssets.Manifest.cache
 C:\Users\rubva\Desktop\Aplicaciones\AplicacionesGit\ProyectoCore\WebAPI\obj\Debug\net5.0\staticwebassets\WebAPI.StaticWebAssets.Pack.cache
