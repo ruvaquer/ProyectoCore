@@ -43,7 +43,7 @@ namespace WebAPI.Middleware
             object errores = null;
 
             switch(ex){
-                case HandLerExcepcion me://Clase creada en proyecto Aplicacion controlamos este tipo y asi le indicamos como debe pintarnos el logger
+                case HandLerException me://Clase creada en proyecto Aplicacion controlamos este tipo y asi le indicamos como debe pintarnos el logger
                     //Que em aparezca el detalle y el tipo
                     logger.LogError(ex, "Manejador Error");//Lo imprimo dentro de un logger
                     //Pongo los mensajes de error que se van almacenando

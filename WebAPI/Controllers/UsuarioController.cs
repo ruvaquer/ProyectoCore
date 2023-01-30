@@ -17,5 +17,11 @@ namespace WebAPI.Controllers
         public async Task<ActionResult<UsuarioDatos>> Login(Login.Ejecuta parametros){
             return  await Mediator.Send(parametros);
         }
+
+        //Endpoit --> http://localhost:5000/api/Usuario/registrar
+        [HttpPost("registrar")]
+        public async Task<ActionResult<UsuarioDatos>> Registrar(Registrar.Ejecuta parametros){
+            return await Mediator.Send(parametros);
+        }
     }
 }

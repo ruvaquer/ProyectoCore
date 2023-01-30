@@ -44,7 +44,7 @@ namespace Aplicacion.Cursos
                 var curso = await _context.Curso.FindAsync(request.CursoId);
                 if(curso == null){
                     //Si falla algo lanzo una alerta de error, solo va ocurrir si no entra en el if anterior
-                    throw new HandLerExcepcion(HttpStatusCode.NotFound, new {mensaje = "No encontro el curso. "});
+                    throw new HandLerException(HttpStatusCode.NotFound, new {mensaje = "No encontro el curso. "});
                 }
                 
                 //Actualización el operador ?? Evalua que si esta variable que le mando por ejemplo el Titulo es indefinida o null lo que hace es poner le valor que tenía antes

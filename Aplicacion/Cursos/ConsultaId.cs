@@ -28,7 +28,7 @@ namespace Aplicacion.Cursos
                 
                 if(curso == null){
                     //Si falla algo lanzo una alerta de error, solo va ocurrir si no entra en el if anterior
-                    throw new HandLerExcepcion(HttpStatusCode.NotFound, new {mensaje = "No encontro el curso. "});
+                    throw new HandLerException(HttpStatusCode.NotFound, new {mensaje = "No encontro el curso. "});
                 }
                 
                 return curso;

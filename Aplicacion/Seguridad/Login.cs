@@ -44,7 +44,7 @@ namespace Aplicacion.Seguridad
                 var usuario = await _userManager.FindByEmailAsync(request.Email);
                 
                 if(usuario == null){
-                    throw new HandLerExcepcion(HttpStatusCode.Unauthorized);
+                    throw new HandLerException(HttpStatusCode.Unauthorized);
                 }
 
                 //2º Ahora si pasamos esa validación podemos hacer el login
@@ -62,7 +62,7 @@ namespace Aplicacion.Seguridad
                     };
                 }
 
-                throw new HandLerExcepcion(HttpStatusCode.Unauthorized);
+                throw new HandLerException(HttpStatusCode.Unauthorized);
 
             }
         }
