@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using Persistencia;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
 namespace Aplicacion.Cursos
 {
@@ -19,9 +20,12 @@ namespace Aplicacion.Cursos
         {
             //Propiedad que representa el CursosOnlineContext
             private readonly CursosOnlineContext _context;
+            private readonly IMapper _mapper;
 
-            public Handler(CursosOnlineContext context){
+
+            public Handler(CursosOnlineContext context, IMapper mapper){
                 _context = context; //<-- Inyection
+                _mapper = mapper;
             }
 
             //Aquí es donde importo o consumo al objeto dle entity Frameworck llamando a la BBDD y devolever la lista de cursos (Toda la lógica de negocio)
@@ -33,9 +37,11 @@ namespace Aplicacion.Cursos
                 var cursos = await _context.Curso
                 .Include(x => x.InstructoresLink)
                 .ThenInclude(x => x.Instructor).ToListAsync();
-                //Pasar el tipo de dato Curso a un tipo CursoDto que es el que mostraremos a Cliente Usaremos una herramienta para mapear clases
 
-                return cursos;
+                //Mappeo de la clase curso (EntityFramework a Dto)
+                var cursoDto = _mapper.Map<List<Curso>,List<CursoDto>>(cursos);
+                
+                return cursoDto;
 
             }
         }

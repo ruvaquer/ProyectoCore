@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZzceHpId++TJ9talL74NFwlB+ymHwFoGUSWKpcv57vP8sXNffFncoIc2L8/IqV8hzPToZujY8vye8Ecm++8PDA==",
+  "dgSpecHash": "1Slxm7vUY9CSYaxh6dcTQEGSO9byAPJr9xBGUc2IiIh2rixkL/IGHpo1Z89ojM5UCQroUKxTQW8hojx2vEWxIg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rubva\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\rubva\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

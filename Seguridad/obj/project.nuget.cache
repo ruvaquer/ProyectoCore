@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2Q5fRmFbk4v+VDXKIKwcrUVhKAG5cP0/FHkFKgKnPi8m4XCTH2W/KsW4LfcczpaAoxldBWKNh1MGPihDj8+Lkg==",
+  "dgSpecHash": "cR/h4LD3GyvcMsq7UU29f9wDxDHL4nau7NLT/+hydwhfPkdx3Ji7z165rkvAXS5118dgMMBb57qoHEKNVAJvgQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Seguridad\\Seguridad.csproj",
+  "projectFilePath": "C:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Seguridad\\Seguridad.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rubva\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\rubva\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

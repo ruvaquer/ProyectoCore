@@ -91,7 +91,8 @@ namespace WebAPI
 
             });
 
-
+            //Agrego la Interface de AutoMapper donde la use
+            services.AddAutoMapper(typeof(Consulta.Handler));
 
             //Agregado por defecto
             services.AddSwaggerGen(c =>
