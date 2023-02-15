@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ksXMrsY3eDulpwi7hJX7ZiQKJiHyMLIkVP/8jqyXH/BWOe0l8mdNztCeyGF0EJPQqazGWQsBbTrrHPcgaKVefg==",
+  "dgSpecHash": "LXovXXuLAK4pjR/OtytShab4LczvV+E2DBszAEWab0vKWclLopO7kg8jaIXjC+2ZU2zt7RAQVhe9t1HNXy4T9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Dominio\\Dominio.csproj",
+  "projectFilePath": "c:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\Dominio\\Dominio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rubva\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.17\\microsoft.aspnetcore.cryptography.internal.5.0.17.nupkg.sha512",
     "C:\\Users\\rubva\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.17\\microsoft.aspnetcore.cryptography.keyderivation.5.0.17.nupkg.sha512",

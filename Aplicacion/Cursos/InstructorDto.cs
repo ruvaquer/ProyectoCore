@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Aplicacion.Cursos
 {
-    public class IntructorDto
+    public class InstructorDto
     {
         public Guid InstructorId {get; set;}
         public string Nombre {get; set;}
