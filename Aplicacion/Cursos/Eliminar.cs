@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace Aplicacion.Cursos
     {
         public class Ejecuta : IRequest{
 
-            public int Id {get; set;}
+            public Guid Id {get; set;}
         
         }
 
@@ -27,6 +28,12 @@ namespace Aplicacion.Cursos
 
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
+                //1º recuperamos los instructores relacionados con el curso para eliminar la relación antes de eliminar los cursos
+                var instructoresBD = _context.CursoInstructor.Where(x => x.CursoId == request.Id);
+                foreach(var instrunctor in instructoresBD){
+                    _context.CursoInstructor.Remove(instrunctor);
+                }
+                //2º Elimino el curso que quiero sin problema ya que no tiene referencias dependientes 
                 var curso = await _context.Curso.FindAsync(request.Id);
                 if(curso == null){
                     //Reemplazo la excepción general por la que nosotros hemos construido
