@@ -35,7 +35,7 @@ namespace WebAPI.Controllers
 
         //Retorna un flat(Bandera), indicando como ha ido la transacción
         [HttpPut("{id}")]
-        public async Task<ActionResult<Unit>> Editar(int id, Editar.Ejecuta datos){
+        public async Task<ActionResult<Unit>> Editar(Guid id, Editar.Ejecuta datos){
             datos.CursoId = id;
             return await Mediator.Send(datos);
         }

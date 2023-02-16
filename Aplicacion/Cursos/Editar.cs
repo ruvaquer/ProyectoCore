@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -13,12 +15,14 @@ namespace Aplicacion.Cursos
     public class Editar
     {
         public class Ejecuta : IRequest{
-            public int CursoId {get; set;}
+            public Guid CursoId {get; set;}
             public string Titulo {get; set;}
             public string Descripcion {get; set;}
 
             //Le pongo que permita null ya que por defecto los dateTime no permiten null
             public DateTime? FechaPublicacion {get; set;}
+
+            public List<Guid> ListaInstructor {get; set;}
         }
 
         //Creo una nueva clase que me controle la validación que estara entre la clase Ejecuta y el Handler
@@ -41,6 +45,7 @@ namespace Aplicacion.Cursos
 
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
+                //Actualizar los datos del curso
                 var curso = await _context.Curso.FindAsync(request.CursoId);
                 if(curso == null){
                     //Si falla algo lanzo una alerta de error, solo va ocurrir si no entra en el if anterior
@@ -52,7 +57,31 @@ namespace Aplicacion.Cursos
                 curso.Descripcion = request.Descripcion ?? curso.Descripcion;
                 curso.FechaPublicacion = request.FechaPublicacion ?? curso.FechaPublicacion;
 
-                //Transacción
+                //Edición de Instructores VALIDACIÓN
+                if(request.ListaInstructor != null){
+                    //Si tengo valores actualizo
+                    if(request.ListaInstructor.Count > 0){
+                        //1º Elimino los instructores actuales en la BBDD
+                        var instructoresBD = _context.CursoInstructor.Where(x => x.CursoId == request.CursoId).ToList();
+                        foreach(var instructorEliminar in instructoresBD){
+                            _context.CursoInstructor.Remove(instructorEliminar);
+                        }
+                        //**********FIN DEL PROCEDIMIENTO PARA ELIMINAR INSTRUCTORES**********
+                        
+                        //Ahora procedimiento para agregar instructores que provienen del cliente 
+                        foreach(var ids in request.ListaInstructor){
+                            var nuevoInstuctor = new CursoInstructor{
+                                CursoId = request.CursoId,
+                                InstructorId = ids
+                            };
+                            _context.CursoInstructor.Add(nuevoInstuctor);
+                        }
+                        //*************FIN DEL PROCEDIMIENTO*****************
+
+                    }
+                }
+
+                //Transacción de confirmación en la BBDD
                 var resultado = await _context.SaveChangesAsync();//Devuelve un estado de la transacción, si es 0 significa que hemos tenido algún error si es 1 o superior es que es correcto.
                 
                 if(resultado > 0){
