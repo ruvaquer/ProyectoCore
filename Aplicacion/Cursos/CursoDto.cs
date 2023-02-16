@@ -13,7 +13,11 @@ namespace Aplicacion.Cursos
         public DateTime? FechaPublicacion {get; set;}
         public byte[] FotoPortada {get; set;}
 
-        //CADA CURSO TIENE NA LISTA DE INSTRUCTORES
+        //CADA CURSO TIENE UNA LISTA DE INSTRUCTORES
         public ICollection<InstructorDto> Instructores {get; set;}
+
+        public PrecioDto precio{get; set;}
+
+        public ICollection<ComentarioDto> comentarios{get; set;}
     }
 }

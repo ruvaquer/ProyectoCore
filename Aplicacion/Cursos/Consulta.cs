@@ -35,8 +35,11 @@ namespace Aplicacion.Cursos
                 //var cursos = await _context.Curso.ToListAsync();
                 //Así condigo que me devuelva los datos de los cursos y además los instructores relacionados con el curso
                 var cursos = await _context.Curso
-                .Include(x => x.InstructoresLink)
+                .Include(x => x.ComentarioLista)//Añado Comentarios
+                .Include(x => x.PrecioPromocion)//Añado precio
+                .Include(x => x.InstructoresLink)//Añado instructores
                 .ThenInclude(x => x.Instructor).ToListAsync();
+
 
                 //Mappeo de la clase curso (EntityFramework a Dto)
                 var cursoDto = _mapper.Map<List<Curso>,List<CursoDto>>(cursos);
