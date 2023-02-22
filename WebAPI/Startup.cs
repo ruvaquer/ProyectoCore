@@ -28,6 +28,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Authorization;
+using Persistencia.DapperConexion;
 
 namespace WebAPI
 {
@@ -48,6 +49,9 @@ namespace WebAPI
             services.AddDbContext<CursosOnlineContext>(opt => {
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            //Configuracion conexion Dapper para Persistence y poder usar procedures
+            services.Configure<ConexionConfiguracion>(Configuration.GetSection("DefaultConnection"));
 
             //Agregamos la configuración de IMedator de Consulta Cursos
             services.AddMediatR(typeof(Consulta.Handler).Assembly);
