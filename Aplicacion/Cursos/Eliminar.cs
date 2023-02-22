@@ -33,7 +33,17 @@ namespace Aplicacion.Cursos
                 foreach(var instrunctor in instructoresBD){
                     _context.CursoInstructor.Remove(instrunctor);
                 }
-                //2º Elimino el curso que quiero sin problema ya que no tiene referencias dependientes 
+                //2º Obtener la lista de comentarios para eliminarlos
+                var comentariosBD = _context.Comentario.Where(x => x.CursoId == request.Id);
+                foreach(var cmt in comentariosBD){
+                    _context.Comentario.Remove(cmt);
+                }
+                //3º Eliminar el Precio
+                var precioBD = _context.Precio.Where(x => x.CursoId == request.Id).FirstOrDefault();
+                if(precioBD != null){
+                    _context.Precio.Remove(precioBD);
+                }        
+                //4º Elimino el curso que quiero sin problema ya que no tiene referencias dependientes 
                 var curso = await _context.Curso.FindAsync(request.Id);
                 if(curso == null){
                     //Reemplazo la excepción general por la que nosotros hemos construido
