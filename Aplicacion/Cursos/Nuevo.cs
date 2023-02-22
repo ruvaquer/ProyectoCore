@@ -18,6 +18,8 @@ namespace Aplicacion.Cursos
             public string Descripcion {get; set;}
             public DateTime? FechaPublicacion {get; set;}
             public List<Guid> ListaInstructor {get; set;}
+            public decimal Precio {get; set;}
+            public decimal Promocion {get; set;}
         }
 
         //Creo una nueva clase que me controle la validación que estara entre la clase Ejecuta y el Handler
@@ -65,6 +67,15 @@ namespace Aplicacion.Cursos
                        _context.CursoInstructor.Add(cursoInstructor);
                     }
                 }
+
+                //Agregar logica para insertar un precio del curso
+                var precioEntidad = new Precio{
+                    CursoId = _cursoId,
+                    PrecioActual = request.Precio,
+                    Promocion = request.Promocion,
+                    PrecioId = Guid.NewGuid()
+                };
+                _context.Precio.Add(precioEntidad);
 
                 //Ahora confirmamos la ransacción Aqui estoy ejecutando la transaccion tanto de Curso como de CursoInstructores
                 var valor = await _context.SaveChangesAsync();//Devuelve un estado de la transacción, si es 0 significa que hemos tenido algún error si es 1 o superior es que es correcto.
