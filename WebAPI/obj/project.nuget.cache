@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "1Slxm7vUY9CSYaxh6dcTQEGSO9byAPJr9xBGUc2IiIh2rixkL/IGHpo1Z89ojM5UCQroUKxTQW8hojx2vEWxIg==",
+  "dgSpecHash": "ZDWHG4btpFTE1mX42tSNVWQDy4zUP960RBn9RETi7d0lNLIhZqRETIqkDOeTC79z9F4VB6zyO05J4O7dbMlodw==",
   "success": true,
   "projectFilePath": "C:\\Users\\rubva\\Desktop\\Aplicaciones\\AplicacionesGit\\ProyectoCore\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rubva\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\rubva\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\rubva\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\rubva\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
     "C:\\Users\\rubva\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
     "C:\\Users\\rubva\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
