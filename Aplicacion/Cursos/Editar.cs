@@ -23,6 +23,9 @@ namespace Aplicacion.Cursos
             public DateTime? FechaPublicacion {get; set;}
 
             public List<Guid> ListaInstructor {get; set;}
+
+            public decimal? Precio {get;set;}
+            public decimal? Promocion {get;set;}
         }
 
         //Creo una nueva clase que me controle la validación que estara entre la clase Ejecuta y el Handler
@@ -57,6 +60,21 @@ namespace Aplicacion.Cursos
                 curso.Descripcion = request.Descripcion ?? curso.Descripcion;
                 curso.FechaPublicacion = request.FechaPublicacion ?? curso.FechaPublicacion;
 
+                //Actualizar el precio del curso
+                var precioEntidad = _context.Precio.Where(x => x.CursoId == curso.CursoId).FirstOrDefault();
+                if(precioEntidad != null){
+                    precioEntidad.PrecioActual = request.Precio ?? precioEntidad.PrecioActual;//Validamos que si el valor de precio es null conserve el que tenía
+                    precioEntidad.Promocion = request.Promocion ?? precioEntidad.Promocion;//Validamos que si el valor de precio es null conserve el que tenía
+                }else{
+                    precioEntidad = new Precio{
+                     PrecioId = Guid.NewGuid(),
+                     PrecioActual = request.Precio ?? 0,
+                     Promocion = request.Promocion ?? 0,
+                     CursoId = curso.CursoId
+                    };
+                    await _context.Precio.AddAsync(precioEntidad);
+                }
+
                 //Edición de Instructores VALIDACIÓN
                 if(request.ListaInstructor != null){
                     //Si tengo valores actualizo
@@ -81,6 +99,7 @@ namespace Aplicacion.Cursos
                     }
                 }
 
+                
                 //Transacción de confirmación en la BBDD
                 var resultado = await _context.SaveChangesAsync();//Devuelve un estado de la transacción, si es 0 significa que hemos tenido algún error si es 1 o superior es que es correcto.
                 

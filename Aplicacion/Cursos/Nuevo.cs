@@ -72,7 +72,7 @@ namespace Aplicacion.Cursos
                 var precioEntidad = new Precio{
                     CursoId = _cursoId,
                     PrecioActual = request.Precio,
-                    Promocion = request.Promocion,
+                    Promocion =request.Promocion,
                     PrecioId = Guid.NewGuid()
                 };
                 _context.Precio.Add(precioEntidad);
