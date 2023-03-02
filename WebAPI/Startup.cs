@@ -29,6 +29,7 @@ using System.Text;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Authorization;
 using Persistencia.DapperConexion;
+using Persistencia.DapperConexion.Instructor;
 
 namespace WebAPI
 {
@@ -50,8 +51,10 @@ namespace WebAPI
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            services.AddOptions();
+
             //Configuracion conexion Dapper para Persistence y poder usar procedures
-            services.Configure<ConexionConfiguracion>(Configuration.GetSection("DefaultConnection"));
+            services.Configure<ConexionConfiguracion>(Configuration.GetSection("ConnectionStrings"));
 
             //Agregamos la configuración de IMedator de Consulta Cursos
             services.AddMediatR(typeof(Consulta.Handler).Assembly);
@@ -103,6 +106,11 @@ namespace WebAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
             });
+
+            //insyecciones de dependencia para mis interfaces con la conexión con procedures y el factory conection
+            services.AddTransient<IFactoryConexion,FactoryConexion>();
+            services.AddScoped<IInstructor, InstructorRepository>();
+            //FIN CONTROL PARA CONEXIONES Y OPERACIONES CON PROCEDURES
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

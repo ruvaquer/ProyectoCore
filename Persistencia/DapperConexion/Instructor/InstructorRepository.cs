@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Dapper;
 
 namespace Persistencia.DapperConexion.Instructor
 {
@@ -27,14 +29,24 @@ namespace Persistencia.DapperConexion.Instructor
             throw new NotImplementedException();
         }
 
-        public Task<IList<InstructorModel>> ObtenerLista()
+        public async Task<List<InstructorModel>> ObtenerLista()
         {
-            throw new NotImplementedException();
+            IEnumerable<InstructorModel> intructorList = null;
+            var storeProcedure = "usp_Obtener_Instructores";
+            try{
+                var connection = _factoryConnection.GetConnection();
+                intructorList =  await connection.QueryAsync<InstructorModel>(storeProcedure,null,commandType : CommandType.StoredProcedure);
+            }catch(Exception ex){
+                throw new Exception("Error en la consulta de datos obtener lista de instructores ",ex);
+            }finally{
+                _factoryConnection.CloseConnection();
+            }
+            return intructorList.ToList();
         }
 
         public Task<InstructorModel> ObtenerPorId(Guid id)
         {
-            throw new NotImplementedException();
+             throw new NotImplementedException();
         }
     }
 }

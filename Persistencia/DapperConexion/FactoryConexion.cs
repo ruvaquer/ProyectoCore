@@ -13,8 +13,8 @@ namespace Persistencia.DapperConexion
         private IDbConnection _connection;
         private readonly IOptions<ConexionConfiguracion> _configs;//Así le pasamos al configuración de conexión, que ya se ha implementado en el startUp de WebApi
 
-        public FactoryConexion(IDbConnection connection){
-            _connection = connection;//Inyectamos la conexion
+        public FactoryConexion(IOptions<ConexionConfiguracion> configs){
+            _configs = configs;//Inyectamos la conexion
         }
 
         ///Importante siempre Cerrar todas las conexiones según se van usando en la llamadas a la BBDD Finnaly recomendado poner siempre
@@ -29,7 +29,7 @@ namespace Persistencia.DapperConexion
         {
             if(_connection == null){
                 //Aqui se crea la cadena de conexión con la configuración aplicada en StartUp del proyecto WebApi
-                _connection = new SqlConnection(_configs.Value.ConexionSql);
+                _connection = new SqlConnection(_configs.Value.DefaultConnection);
             }
             if(_connection.State != ConnectionState.Open){
                 _connection.Open();
