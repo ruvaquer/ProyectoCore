@@ -9,21 +9,20 @@ using Persistencia.DapperConexion.Instructor;
 
 namespace Aplicacion.Instructores
 {
-    public class Nuevo
+    public class Editar
     {
         public class Ejecuta : IRequest{
-            //Parametros que llegan desde cliente el Id no hace falta ya que lo creo internamente
-            public string Nombre {get; set;}
-            public string Apellidos {get; set;}
-            public string Grado {get; set;}
+            public Guid InstructorId{get; set;}
+            public string Nombre{get; set;}
+            public string Apellidos{get; set;}
+            public string Grado{get; set;}
         }
 
-        //Clase que valida los datos
         public class EjecutaValida : AbstractValidator<Ejecuta>{
             public EjecutaValida(){
-                RuleFor(x => x.Nombre).NotEmpty();
-                RuleFor(x => x.Apellidos).NotEmpty();
-                RuleFor(x => x.Grado).NotEmpty();
+                RuleFor(x=>x.Nombre).NotEmpty();
+                RuleFor(x=>x.Apellidos).NotEmpty();
+                RuleFor(x=>x.Grado).NotEmpty();
             }
         }
 
@@ -32,26 +31,25 @@ namespace Aplicacion.Instructores
             private readonly IInstructor _instructorRepository;
 
             public Handler(IInstructor instructorRepository){
-            _instructorRepository = instructorRepository;
+                _instructorRepository = instructorRepository;
             }
-
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
                 var instructorModel = new InstructorModel{
+                  InstructorId = request.InstructorId,
                   Nombre = request.Nombre,
                   Apellidos = request.Apellidos,
                   Grado = request.Grado,
                 };
-                var resultado = await _instructorRepository.Nuevo(instructorModel);
+                var resultado = await _instructorRepository.Actualiza(instructorModel);
 
                 if(resultado != 0){
                     return Unit.Value;
                 }
 
-                throw new Exception("no se pudo insertar el instructor "+resultado);
-
+                throw new Exception("no se pudo actualizar el instructor "+resultado);
             }
         }
-
     }
+
 }

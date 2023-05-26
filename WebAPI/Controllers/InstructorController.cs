@@ -25,5 +25,11 @@ namespace WebAPI.Controllers
         public async Task<ActionResult<Unit>> Crear(Nuevo.Ejecuta item){
             return await Mediator.Send(item);
         }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Unit>> Actualizar(Guid id, Editar.Ejecuta item){
+            item.InstructorId = id;
+            return await Mediator.Send(item);
+        }
     }
 }

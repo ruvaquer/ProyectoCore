@@ -15,9 +15,34 @@ namespace Persistencia.DapperConexion.Instructor
             _factoryConnection = factoryConnection;
         }
 
-        public Task<int> Actualiza(InstructorModel parametros)
+        public async Task<int> Actualiza(InstructorModel parametros)
         {
-            throw new NotImplementedException();
+            var storeProcedure = "usp_intructor_editar";
+            int resultado = 0;
+            var connection = _factoryConnection.GetConnection();
+            //using(var transaction = connection.BeginTransaction() ){
+                try{
+                    resultado = await connection.ExecuteAsync(storeProcedure, 
+                    new
+                    {
+                        IntructorId = parametros.InstructorId,
+                        Nombre = parametros.Nombre,
+                        Apellidos = parametros.Apellidos,
+                        Grado = parametros.Grado
+                    },
+                        commandType: CommandType.StoredProcedure
+                    );
+                    //transaction.Commit();
+                }catch(Exception ex){
+                    throw new Exception("Error en la consulta de datos actualizar instructor "+ex.StackTrace);
+                }finally
+                {
+                    _factoryConnection.CloseConnection();
+                }
+                    
+            //}
+              
+            return resultado;
         }
 
         public Task<int> Elimina(Guid id)
@@ -31,7 +56,7 @@ namespace Persistencia.DapperConexion.Instructor
             int resultado = 0;
             
                 var connection = _factoryConnection.GetConnection();
-                //using(var transaction = connection.BeginTransaction() ){
+                using(var transaction = connection.BeginTransaction() ){
                     try{
                         resultado = await connection.ExecuteAsync(storeProcedure, new
                         {
@@ -42,7 +67,7 @@ namespace Persistencia.DapperConexion.Instructor
                         },
                             commandType: CommandType.StoredProcedure
                         );
-                        //transaction.Commit();
+                        transaction.Commit();
                     }catch(Exception ex){
                         throw new Exception("Error en la consulta de datos nuevo instructor "+ex.StackTrace);
                     }finally
@@ -50,7 +75,7 @@ namespace Persistencia.DapperConexion.Instructor
                         _factoryConnection.CloseConnection();
                     }
                     
-                //}
+                }
               
             return resultado;
         }
