@@ -12,6 +12,11 @@ namespace Aplicacion.Comentarios
 {
     public class Nuevo
     {
+        /*
+        Nota a parte: que me traiga la cantidad de cursos en las cuales esta asignado cada instructor
+        var cursosInstructores = await _context.CursoInstructor.Where(x => x.InstructorId == request.InstructorId).ToListAsync();
+        var cantidadCursos = cursosInstructores.Count();
+        */
         public class Ejecuta : IRequest
         {
             public string Alumno { get; set; }
@@ -20,8 +25,10 @@ namespace Aplicacion.Comentarios
             public Guid CursoId { get; set; }
         }
 
-        public class EjecutaValidacion : AbstractValidator<Ejecuta>{
-            public EjecutaValidacion(){
+        public class EjecutaValidacion : AbstractValidator<Ejecuta>
+        {
+            public EjecutaValidacion()
+            {
                 RuleFor(x => x.Alumno).NotEmpty();
                 RuleFor(x => x.Puntuacion).NotEmpty();
                 RuleFor(x => x.Comentario).NotEmpty();
@@ -40,7 +47,8 @@ namespace Aplicacion.Comentarios
 
             public async Task<Unit> Handle(Ejecuta request, CancellationToken cancellationToken)
             {
-                var comentario = new Comentario(){
+                var comentario = new Comentario()
+                {
                     ComentarioId = Guid.NewGuid(),
                     Puntuacion = request.Puntuacion,
                     Alumno = request.Alumno,
@@ -50,9 +58,10 @@ namespace Aplicacion.Comentarios
 
                 _context.Comentario.Add(comentario);
 
-                var resultado =  await _context.SaveChangesAsync();
+                var resultado = await _context.SaveChangesAsync();
 
-                if(resultado > 0){
+                if (resultado > 0)
+                {
                     return Unit.Value;
                 }
 
