@@ -24,5 +24,10 @@ namespace WebAPI.Controllers
         public async Task<ActionResult<Unit>> Crear(Nuevo.Ejecuta item){
             return await Mediator.Send(item);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Unit>> Eliminar(Guid id){
+            return await Mediator.Send(new Eliminar.Ejecuta{Id = id});
+        }
     }
 }
